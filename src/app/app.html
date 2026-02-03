@@ -180,9 +180,47 @@
       margin-block: 1.5rem;
     }
   }
+
+  /* Top nav for the simple landing page */
+  .top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    z-index: 1000;
+  }
+  .top-nav .nav-inner {
+    display: flex;
+    gap: 12px;
+    padding: 0 16px;
+  }
+  .nav-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+    background: transparent;
+  }
+  .nav-btn:hover { background: #f2f4f7; }
+
 </style>
 
-<main class="main">
+<nav class="top-nav" role="navigation" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a class="nav-btn" routerLink="/certifications">Certifications</a>
+    <a class="nav-btn" routerLink="/about">About Me</a>
+    <a class="nav-btn" routerLink="/projects">Projects</a>
+  </div>
+</nav>
+
+<main class="main" style="padding-top:56px;">
   <div class="content">
     <div class="left-side">
       <svg
