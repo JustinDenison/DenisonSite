@@ -6,39 +6,67 @@
   }
 
   .summary {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     color: rgba(0,0,0,0.8);
   }
 
-  .socials-list {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    align-items: center;
+  .socials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    align-items: start;
   }
 
-  .social-btn {
-    display: inline-flex;
+  .social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: #111;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.06);
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    }
+
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  .profile-image-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
-    padding: 0;
-    border-radius: 8px;
-    text-decoration: none;
-    color: var(--text-color, #111);
     background: #f3f4f6;
-    border: 1px solid rgba(0,0,0,0.06);
-    font-weight: 600;
-    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    border: 2px solid rgba(0,0,0,0.06);
+    position: relative;
   }
 
-  .social-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
-  .icon { width: 20px; height: 20px; display: block; fill: currentColor; }
+  .icon-fallback {
+    width: 40px;
+    height: 40px;
+    fill: currentColor;
+    color: inherit;
+  }
 
   .sr-only {
     position: absolute !important;
@@ -47,11 +75,4 @@
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
   }
-
-  .social-btn.facebook { background:#1877F2; color: white; }
-  .social-btn.instagram { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); color:white; }
-  .social-btn.linkedin { background:#0A66C2; color:white; }
-  .social-btn.github { background: #161614; color: white; }
-
-  .note { margin-top: 0.8rem; color: rgba(0,0,0,0.6); font-size:0.95rem; }
 }
