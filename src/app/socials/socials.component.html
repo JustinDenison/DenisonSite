@@ -1,4 +1,37 @@
-<section style="padding:2rem;">
+<section class="socials-page">
   <h1>Socials</h1>
-  <p>Links to social profiles will go here.</p>
+
+  <div class="socials-grid">
+    <div class="socials-list">
+      <a class="social-btn facebook" [href]="facebook || '#'" target="_blank" rel="noopener noreferrer" [class.disabled]="!facebook">Facebook</a>
+      <a class="social-btn instagram" [href]="instagram || '#'" target="_blank" rel="noopener noreferrer" [class.disabled]="!instagram">Instagram</a>
+      <a class="social-btn linkedin" [href]="linkedin || '#'" target="_blank" rel="noopener noreferrer" [class.disabled]="!linkedin">LinkedIn</a>
+      <a class="social-btn github" [href]="github || '#'" target="_blank" rel="noopener noreferrer" [class.disabled]="!github">GitHub</a>
+    </div>
+
+    <form class="socials-form" (ngSubmit)="save()">
+      <label>Facebook
+        <input type="url" name="facebook" [(ngModel)]="facebook" placeholder="https://facebook.com/your-profile" />
+      </label>
+
+      <label>Instagram
+        <input type="url" name="instagram" [(ngModel)]="instagram" placeholder="https://instagram.com/your-profile" />
+      </label>
+
+      <label>LinkedIn
+        <input type="url" name="linkedin" [(ngModel)]="linkedin" placeholder="https://www.linkedin.com/in/your-profile" />
+      </label>
+
+      <label>GitHub
+        <input type="url" name="github" [(ngModel)]="github" placeholder="https://github.com/your-username" />
+      </label>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-save">Save</button>
+        <button type="button" class="btn-clear" (click)="clear()">Clear</button>
+      </div>
+    </form>
+  </div>
+
+  <p class="note">Tip: paste your full profile URLs and click Save. Links open in a new tab.</p>
 </section>
