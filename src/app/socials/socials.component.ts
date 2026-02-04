@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-socials',
   standalone: true,
+  imports: [NgIf],
   templateUrl: './socials.component.html',
   styleUrls: ['./socials.component.scss']
 })
