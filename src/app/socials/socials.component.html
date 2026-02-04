@@ -1,37 +1,14 @@
 <section class="socials-page">
   <h1>Socials</h1>
 
-  <div class="socials-grid">
-    <div class="socials-list">
-      <a class="social-btn facebook" [href]="facebook || '#'" target="_blank" rel="noopener noreferrer" [class.disabled]="!facebook">Facebook</a>
-      <a class="social-btn instagram" [href]="instagram || '#'" target="_blank" rel="noopener noreferrer" [class.disabled]="!instagram">Instagram</a>
-      <a class="social-btn linkedin" [href]="linkedin || '#'" target="_blank" rel="noopener noreferrer" [class.disabled]="!linkedin">LinkedIn</a>
-      <a class="social-btn github" [href]="github || '#'" target="_blank" rel="noopener noreferrer" [class.disabled]="!github">GitHub</a>
-    </div>
+  <p class="summary">{{ summary }}</p>
 
-    <form class="socials-form" (ngSubmit)="save()">
-      <label>Facebook
-        <input type="url" name="facebook" [(ngModel)]="facebook" placeholder="https://facebook.com/your-profile" />
-      </label>
-
-      <label>Instagram
-        <input type="url" name="instagram" [(ngModel)]="instagram" placeholder="https://instagram.com/your-profile" />
-      </label>
-
-      <label>LinkedIn
-        <input type="url" name="linkedin" [(ngModel)]="linkedin" placeholder="https://www.linkedin.com/in/your-profile" />
-      </label>
-
-      <label>GitHub
-        <input type="url" name="github" [(ngModel)]="github" placeholder="https://github.com/your-username" />
-      </label>
-
-      <div class="form-actions">
-        <button type="submit" class="btn-save">Save</button>
-        <button type="button" class="btn-clear" (click)="clear()">Clear</button>
-      </div>
-    </form>
+  <div class="socials-list">
+    <a class="social-btn facebook" *ngIf="facebook" [href]="facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a class="social-btn instagram" *ngIf="instagram" [href]="instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a class="social-btn linkedin" *ngIf="linkedin" [href]="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a class="social-btn github" *ngIf="github" [href]="github" target="_blank" rel="noopener noreferrer">GitHub</a>
   </div>
 
-  <p class="note">Tip: paste your full profile URLs and click Save. Links open in a new tab.</p>
+  <p class="note">Edit the link variables in <code>src/app/socials/socials.component.ts</code> to set your URLs.</p>
 </section>

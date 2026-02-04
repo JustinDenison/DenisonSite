@@ -5,11 +5,9 @@
     margin-bottom: 1rem;
   }
 
-  .socials-grid {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 1.5rem;
-    align-items: start;
+  .summary {
+    margin-bottom: 1rem;
+    color: rgba(0,0,0,0.8);
   }
 
   .socials-list {
@@ -29,43 +27,10 @@
     font-weight: 600;
   }
 
-  .social-btn.disabled {
-    opacity: 0.45;
-    pointer-events: none;
-  }
-
   .social-btn.facebook { background:#1877F2; color: white; }
   .social-btn.instagram { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); color:white; }
   .social-btn.linkedin { background:#0A66C2; color:white; }
   .social-btn.github { background: #161614; color: white; }
-
-  .socials-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-
-    label {
-      display: flex;
-      flex-direction: column;
-      font-size: 0.95rem;
-      gap: 0.4rem;
-    }
-
-    input {
-      padding: 0.5rem;
-      border-radius: 6px;
-      border: 1px solid rgba(0,0,0,0.12);
-    }
-
-    .form-actions {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-
-      .btn-save { padding: 0.5rem 0.8rem; background: var(--accent, #0366d6); color:white; border-radius:6px; border:none; }
-      .btn-clear { padding: 0.5rem 0.8rem; background:#e5e7eb; border-radius:6px; border:none; }
-    }
-  }
 
   .note { margin-top: 0.8rem; color: rgba(0,0,0,0.6); font-size:0.95rem; }
 }

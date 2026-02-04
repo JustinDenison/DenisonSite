@@ -1,38 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-socials',
   standalone: true,
-  imports: [FormsModule],
   templateUrl: './socials.component.html',
   styleUrls: ['./socials.component.scss']
 })
-export class Socials implements OnInit {
-  facebook = '';
-  instagram = '';
-  linkedin = '';
-  github = '';
+export class Socials {
+  // Edit these values directly in this file to set your links and page summary
+  facebook = ''; // e.g. 'https://facebook.com/your-profile'
+  instagram = ''; // e.g. 'https://instagram.com/your-profile'
+  linkedin = ''; // e.g. 'https://www.linkedin.com/in/your-profile'
+  github = ''; // e.g. 'https://github.com/your-username'
 
-  ngOnInit() {
-    this.facebook = localStorage.getItem('social:facebook') ?? '';
-    this.instagram = localStorage.getItem('social:instagram') ?? '';
-    this.linkedin = localStorage.getItem('social:linkedin') ?? '';
-    this.github = localStorage.getItem('social:github') ?? '';
-  }
-
-  save() {
-    localStorage.setItem('social:facebook', this.facebook);
-    localStorage.setItem('social:instagram', this.instagram);
-    localStorage.setItem('social:linkedin', this.linkedin);
-    localStorage.setItem('social:github', this.github);
-  }
-
-  clear() {
-    this.facebook = '';
-    this.instagram = '';
-    this.linkedin = '';
-    this.github = '';
-    this.save();
-  }
+  // Add a short description/summary about your social profiles here
+  summary = 'Add a short summary about your social profiles here.';
 }
