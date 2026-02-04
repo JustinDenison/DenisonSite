@@ -1,31 +1,17 @@
 <section class="socials-page">
   <h1>Socials</h1>
-
   <p class="summary">{{ summary }}</p>
 
-  <div class="socials-list">
-    <a class="social-btn facebook" *ngIf="facebook" [href]="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-      <svg class="icon" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M22 12a10 10 0 10-11.5 9.9v-7h-2.2V12h2.2V9.8c0-2.2 1.3-3.4 3.3-3.4.96 0 1.97.17 1.97.17v2.16h-1.1c-1.1 0-1.44.68-1.44 1.38V12h2.45l-.39 2.9h-2.06v7A10 10 0 0022 12z"/></svg>
-      <span class="sr-only">Facebook</span>
-    </a>
-
-    <a class="social-btn instagram" *ngIf="instagram" [href]="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-      <svg class="icon" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-        <rect x="3" y="3" width="18" height="18" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
-        <circle cx="12" cy="12" r="3.2" fill="currentColor"></circle>
-        <circle cx="18.2" cy="5.8" r="0.8" fill="currentColor"></circle>
-      </svg>
-      <span class="sr-only">Instagram</span>
-    </a>
-
-    <a class="social-btn linkedin" *ngIf="linkedin" [href]="linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-      <svg class="icon" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 11-.001 5.001A2.5 2.5 0 014.98 3.5zM3 9h4v12H3zM9 9h3.8v1.6h.1c.5-.9 1.8-1.8 3.7-1.8 4 0 4.8 2.6 4.8 6V21h-4v-5.3c0-1.3 0-3-1.8-3-1.9 0-2.2 1.5-2.2 2.9V21H9z"/></svg>
-      <span class="sr-only">LinkedIn</span>
-    </a>
-
-    <a class="social-btn github" *ngIf="github" [href]="github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-      <svg class="icon" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.2.8-.5v-1.7c-3.3.7-4-1.4-4-1.4-.5-1.2-1.1-1.6-1.1-1.6-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.6.4-1.1.8-1.4-2.7-.3-5.6-1.3-5.6-5.9 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.4 11.4 0 016 0C17.8 4.1 18.8 4.4 18.8 4.4c.6 1.7.2 3 .1 3.3.8.9 1.2 1.9 1.2 3.2 0 4.6-2.9 5.6-5.6 5.9.4.3.8.9.8 1.8v2.6c0 .2.2.6.8.5A12 12 0 0012 .5z"/></svg>
-      <span class="sr-only">GitHub</span>
-    </a>
+  <div class="profiles-container">
+    <div *ngFor="let profile of profiles" class="profile-preview">
+      <div class="preview-header">
+        <h3>{{ profile.name }}</h3>
+        <p>{{ profile.description }}</p>
+      </div>
+      <div class="preview-content">
+        <div *ngIf="profile.loading" class="loading">Loading...</div>
+        <div *ngIf="!profile.loading && profile.html" class="live-profile" [innerHTML]="profile.html"></div>
+      </div>
+    </div>
   </div>
 </section>
