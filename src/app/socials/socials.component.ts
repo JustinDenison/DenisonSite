@@ -9,11 +9,10 @@ import { NgIf } from '@angular/common';
   styleUrls: ['./socials.component.scss']
 })
 export class Socials {
-  // Edit these values directly in this file to set your links and page summary
-  facebook = ''; // e.g. 'https://facebook.com/your-profile'
-  instagram = ''; // e.g. 'https://instagram.com/your-profile'
-  linkedin = ''; // e.g. 'https://www.linkedin.com/in/your-profile'
-  github = ''; // e.g. 'https://github.com/your-username'
+  facebook = 'https://www.facebook.com/jus.booly';
+  instagram = 'https://www.instagram.com/jus.booly/';
+  linkedin = 'https://www.linkedin.com/in/justin-denison/';
+  github = 'https://github.com/JustinDenison';
 
   // Add a short description/summary about your social profiles here
   summary = 'Add a short summary about your social profiles here.';
