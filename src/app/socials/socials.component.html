@@ -9,7 +9,10 @@
         <p>{{ profile.description }}</p>
       </div>
       <div class="preview-content">
-        <div *ngIf="profile.loading" class="loading">Loading...</div>
+        <div *ngIf="profile.loading" class="loading-spinner">
+          <div class="spinner"></div>
+          <p>Loading profile...</p>
+        </div>
         <div *ngIf="!profile.loading && profile.html" class="live-profile" [innerHTML]="profile.html"></div>
       </div>
     </div>
