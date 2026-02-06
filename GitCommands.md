@@ -42,7 +42,9 @@ git checkout main
 git merge dev
 git push
 ng build --configuration production
-npx angular-cli-ghpages --dir=dist/DenisonSite/browser
+cp dist/DenisonSite/browser/index.csr.html dist/DenisonSite/browser/index.html
+cp dist/DenisonSite/browser/index.html dist/DenisonSite/browser/404.html
+npx angular-cli-ghpages --dir=dist/DenisonSite/browser --cname=www.denison.org
 
 USEFUL CHECKS
 git branch
